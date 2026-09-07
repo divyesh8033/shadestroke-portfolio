@@ -4923,3 +4923,143 @@ body:hover .mouse-spotlight {
         display: none !important;
     }
 }
+
+
+/* =========================================================
+   SHADESTROKE — MOBILE ARTWORK VIEWER FINAL FIX
+   Bigger artwork + text below artwork
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .art-viewer {
+        padding:
+            calc(64px + env(safe-area-inset-top))
+            12px
+            calc(72px + env(safe-area-inset-bottom));
+        align-items: flex-start;
+        justify-content: flex-start;
+        overflow-y: auto;
+    }
+
+    .viewer-content {
+        width: 100%;
+        max-width: 100%;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 18px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .viewer-image-wrapper {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        min-height: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .viewer-image-wrapper img {
+        display: block;
+        width: auto;
+        max-width: 96vw;
+        height: auto;
+        max-height: 68svh;
+        object-fit: contain;
+        margin: 0 auto;
+    }
+
+    .viewer-details {
+        width: 100%;
+        max-width: 96vw;
+        padding: 0 14px 18px;
+        text-align: center;
+    }
+
+    .viewer-details span {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 10px;
+        letter-spacing: 3px;
+        opacity: 0.55;
+    }
+
+    .viewer-details h2 {
+        margin: 0;
+        font-size: clamp(30px, 9vw, 44px);
+        line-height: 1.02;
+        letter-spacing: -1.8px;
+    }
+
+    .viewer-details p {
+        display: block;
+        max-width: 360px;
+        margin: 12px auto 0;
+        font-size: 13px;
+        line-height: 1.65;
+        opacity: 0.6;
+    }
+
+    .viewer-close {
+        top: calc(12px + env(safe-area-inset-top));
+        right: 12px;
+        width: 42px;
+        height: 42px;
+        z-index: 10;
+    }
+
+    .viewer-arrow {
+        position: fixed;
+        top: auto;
+        bottom: calc(16px + env(safe-area-inset-bottom));
+        width: 44px;
+        height: 44px;
+        z-index: 10;
+        transform: none !important;
+    }
+
+    .viewer-prev {
+        left: 16px;
+    }
+
+    .viewer-next {
+        right: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .art-viewer {
+        padding:
+            calc(58px + env(safe-area-inset-top))
+            8px
+            calc(70px + env(safe-area-inset-bottom));
+    }
+
+    .viewer-image-wrapper img {
+        max-width: 98vw;
+        max-height: 72svh;
+    }
+
+    .viewer-details {
+        max-width: 98vw;
+        padding: 0 10px 16px;
+    }
+
+    .viewer-details h2 {
+        font-size: clamp(28px, 9.5vw, 40px);
+    }
+
+    .viewer-details p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+}
