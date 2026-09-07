@@ -5063,3 +5063,72 @@ body:hover .mouse-spotlight {
         line-height: 1.6;
     }
 }
+
+
+/* =========================================================
+   SHADESTROKE — MOBILE VIEWER ARROW / BACK-TO-TOP FIX
+   Keeps Previous and Next buttons visible above everything.
+========================================================= */
+
+/* Artwork viewer must sit above the Back-to-Top button. */
+.art-viewer {
+    z-index: 12000;
+}
+
+/* Never show the website Back-to-Top button while artwork viewer is open. */
+body.viewer-open .back-top {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+/* Viewer controls stay above artwork and text. */
+.art-viewer .viewer-close,
+.art-viewer .viewer-arrow {
+    z-index: 12002;
+}
+
+@media (max-width: 768px) {
+
+    .art-viewer .viewer-arrow {
+        position: fixed;
+        top: auto;
+        bottom: calc(16px + env(safe-area-inset-bottom));
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: none !important;
+    }
+
+    .art-viewer .viewer-prev {
+        left: 16px;
+        right: auto;
+    }
+
+    .art-viewer .viewer-next {
+        left: auto;
+        right: 16px;
+    }
+
+    .art-viewer .viewer-close {
+        position: fixed;
+        top: calc(12px + env(safe-area-inset-top));
+        right: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .art-viewer .viewer-prev {
+        left: 12px;
+    }
+
+    .art-viewer .viewer-next {
+        right: 12px;
+    }
+}
