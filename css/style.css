@@ -4304,3 +4304,622 @@ body:hover .mouse-spotlight {
 
     transform: translateY(0%);
 }
+
+
+/* =========================================================
+   SHADESTROKE — FINAL MOBILE RESPONSIVE OVERRIDES
+   Desktop styles are untouched. These rules apply only
+   to tablets/phones at 768px and below.
+========================================================= */
+
+@media (max-width: 768px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+        position: relative;
+    }
+
+    img,
+    video,
+    svg {
+        max-width: 100%;
+    }
+
+    /* ---------- NAVBAR ---------- */
+
+    .navbar {
+        width: 100%;
+        padding: 16px 18px;
+        align-items: center;
+    }
+
+    .logo {
+        max-width: calc(100vw - 90px);
+        font-size: 16px;
+        letter-spacing: 2px;
+        white-space: nowrap;
+    }
+
+    .logo:hover {
+        letter-spacing: 2px;
+    }
+
+    .mobile-menu-btn {
+        flex: 0 0 42px;
+        width: 42px;
+        height: 42px;
+    }
+
+    .mobile-menu-btn span:first-child {
+        top: 17px;
+    }
+
+    .mobile-menu-btn span:last-child {
+        top: 23px;
+    }
+
+    .mobile-menu-btn.active span:first-child,
+    .mobile-menu-btn.active span:last-child {
+        top: 20px;
+    }
+
+    /* ---------- FULLSCREEN MOBILE MENU ---------- */
+
+    .mobile-menu {
+        width: 100%;
+        height: 100dvh;
+        min-height: 100svh;
+        padding:
+            calc(88px + env(safe-area-inset-top))
+            20px
+            calc(24px + env(safe-area-inset-bottom));
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+
+    .mobile-menu-links a {
+        gap: 14px;
+        padding: 15px 0;
+        font-size: clamp(31px, 10vw, 46px);
+        letter-spacing: -1.5px;
+    }
+
+    .mobile-menu-footer {
+        gap: 12px;
+        flex-wrap: wrap;
+        font-size: 8px;
+        letter-spacing: 1.4px;
+    }
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+        min-height: 100svh;
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+        padding:
+            calc(94px + env(safe-area-inset-top))
+            18px
+            84px;
+    }
+
+    .hero-small-text {
+        margin-bottom: 20px;
+        padding: 0;
+        font-size: 9px;
+        line-height: 1.6;
+        letter-spacing: 2.2px;
+    }
+
+    .hero h1 {
+        max-width: 100%;
+        margin-inline: auto;
+        font-size: clamp(42px, 13vw, 58px);
+        line-height: 0.94;
+        letter-spacing: -2.5px;
+        overflow-wrap: normal;
+    }
+
+    .hero h1 span {
+        margin-top: 7px;
+    }
+
+    .hero-description {
+        width: 100%;
+        max-width: 440px;
+        margin-top: 24px;
+        padding: 0;
+        font-size: 13px;
+        line-height: 1.65;
+    }
+
+    .explore-button {
+        margin-top: 28px;
+        padding: 13px 20px;
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .scroll-indicator {
+        bottom: 12px;
+    }
+
+    .scroll-line {
+        height: 34px;
+    }
+
+    /* ---------- COMMON SECTION SPACING ---------- */
+
+    .gallery-section,
+    .video-section,
+    .about-section,
+    .contact-section {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .gallery-section,
+    .video-section,
+    .about-section {
+        padding-top: 82px;
+        padding-bottom: 82px;
+    }
+
+    .contact-section {
+        padding-top: 82px;
+        padding-bottom: 28px;
+    }
+
+    /* ---------- SECTION HEADINGS ---------- */
+
+    .gallery-heading,
+    .video-heading {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 42px;
+    }
+
+    .gallery-heading p,
+    .video-heading > p:first-child,
+    .contact-label {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .gallery-heading h2,
+    .video-heading h2 {
+        font-size: clamp(42px, 12vw, 58px);
+        line-height: 0.98;
+        letter-spacing: -2px;
+    }
+
+    .gallery-heading h2 span,
+    .video-heading h2 span {
+        font-size: clamp(38px, 11vw, 54px);
+        line-height: 1;
+        margin-top: 6px;
+        letter-spacing: -2px;
+    }
+
+    /* ---------- ART GALLERY ---------- */
+
+    .art-grid {
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .art-grid > .art-card,
+    .art-grid > .art-card.art-large,
+    .art-grid > .art-card.art-tall,
+    .art-grid > .art-card.art-wide,
+    .art-grid > .art-card.large,
+    .art-grid > .art-card.tall,
+    .art-grid > .art-card.wide {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        aspect-ratio: 4 / 5;
+        margin: 0;
+    }
+
+    .art-info {
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        gap: 12px;
+    }
+
+    .art-info h3 {
+        max-width: 74vw;
+        font-size: clamp(17px, 5.4vw, 21px);
+        line-height: 1.15;
+        overflow-wrap: break-word;
+    }
+
+    .art-title-wrap {
+        max-width: 78%;
+    }
+
+    .art-card:hover img,
+    .art-card:hover .art-info h3,
+    .art-card:hover .art-info span {
+        transform: none;
+    }
+
+    /* ---------- VIDEO GALLERY ---------- */
+
+    .video-grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .video-card,
+    .video-large,
+    .video-wide {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        aspect-ratio: 4 / 5;
+        margin: 0;
+    }
+
+    .video-overlay {
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+    }
+
+    .video-overlay h3 {
+        max-width: calc(100% - 72px);
+        font-size: 18px;
+        line-height: 1.2;
+    }
+
+    .video-play-btn {
+        width: 48px;
+        height: 48px;
+    }
+
+    /* ---------- ABOUT ---------- */
+
+    .about-layout {
+        width: 100%;
+        display: block;
+    }
+
+    .about-visual {
+        width: 100%;
+        min-height: 0;
+        margin-bottom: 50px;
+    }
+
+    .about-image-frame {
+        width: 100%;
+        max-width: 460px;
+        height: auto;
+        aspect-ratio: 4 / 5;
+        margin-inline: auto;
+    }
+
+    .floating-word {
+        display: none;
+    }
+
+    .about-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .about-content h2 {
+        font-size: clamp(42px, 12vw, 56px);
+        line-height: 0.98;
+        letter-spacing: -2px;
+    }
+
+    .about-description {
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    .about-details > div {
+        grid-template-columns: 72px minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .about-number {
+        top: 45px;
+        right: 8px;
+        font-size: 32vw;
+    }
+
+    /* ---------- CONTACT ---------- */
+
+    .contact-top {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .contact-top h2 {
+        max-width: 100%;
+        font-size: clamp(44px, 13vw, 60px);
+        line-height: 0.94;
+        letter-spacing: -3px;
+    }
+
+    .contact-description {
+        max-width: 100%;
+        margin-top: 28px;
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .contact-actions {
+        width: 100%;
+        margin-top: 52px;
+        display: block;
+    }
+
+    .contact-main-link {
+        display: inline-block;
+        max-width: 100%;
+        font-size: clamp(18px, 5.5vw, 25px);
+        line-height: 1.35;
+        letter-spacing: -0.8px;
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+
+    .contact-socials {
+        margin-top: 32px;
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+
+    .contact-socials a {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .contact-marquee {
+        width: calc(100% + 36px);
+        margin-left: -18px;
+        margin-top: 70px;
+    }
+
+    .marquee-track span {
+        padding: 18px 14px;
+        font-size: 36px;
+        letter-spacing: -1.5px;
+    }
+
+    .footer {
+        width: 100%;
+        padding-top: 30px;
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .footer-center,
+    .footer-right {
+        text-align: left;
+    }
+
+    /* ---------- ARTWORK VIEWER ---------- */
+
+    .art-viewer {
+        padding:
+            calc(72px + env(safe-area-inset-top))
+            14px
+            calc(18px + env(safe-area-inset-bottom));
+        align-items: center;
+        overflow-y: auto;
+    }
+
+    .viewer-content {
+        width: 100%;
+        height: auto;
+        max-height: none;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        align-items: stretch;
+    }
+
+    .viewer-image-wrapper {
+        width: 100%;
+        height: min(62svh, 560px);
+        min-height: 260px;
+    }
+
+    .viewer-image-wrapper img {
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+
+    .viewer-details {
+        width: 100%;
+        padding: 0 46px 4px;
+        text-align: center;
+    }
+
+    .viewer-details span {
+        margin-bottom: 7px;
+        font-size: 9px;
+    }
+
+    .viewer-details h2 {
+        font-size: clamp(26px, 8vw, 38px);
+        line-height: 1;
+        letter-spacing: -1.5px;
+    }
+
+    .viewer-details p {
+        display: none;
+    }
+
+    .viewer-close,
+    .video-viewer-close {
+        top: calc(14px + env(safe-area-inset-top));
+        right: 14px;
+        width: 42px;
+        height: 42px;
+        font-size: 25px;
+    }
+
+    .viewer-arrow {
+        top: auto;
+        bottom: calc(18px + env(safe-area-inset-bottom));
+        width: 42px;
+        height: 42px;
+        transform: none !important;
+        z-index: 4;
+    }
+
+    .viewer-prev {
+        left: 16px;
+    }
+
+    .viewer-next {
+        right: 16px;
+    }
+
+    /* ---------- VIDEO VIEWER ---------- */
+
+    .video-viewer {
+        padding:
+            calc(68px + env(safe-area-inset-top))
+            12px
+            calc(16px + env(safe-area-inset-bottom));
+    }
+
+    .video-viewer-content {
+        width: 100%;
+        height: min(76svh, 720px);
+        max-width: 100%;
+    }
+
+    /* ---------- MOBILE-ONLY EFFECT CLEANUP ---------- */
+
+    .mouse-spotlight,
+    .custom-cursor,
+    .art-card-glare {
+        display: none !important;
+    }
+
+    .section-transition::after {
+        display: none;
+    }
+
+    .back-top {
+        right: 14px;
+        bottom: calc(14px + env(safe-area-inset-bottom));
+        width: 46px;
+        height: 46px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .navbar {
+        padding: 14px 15px;
+    }
+
+    .logo {
+        font-size: 15px;
+        letter-spacing: 1.6px;
+    }
+
+    .hero-content {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .hero h1 {
+        font-size: clamp(39px, 12.5vw, 52px);
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
+
+    .gallery-section,
+    .video-section,
+    .about-section,
+    .contact-section {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .art-grid > .art-card,
+    .art-grid > .art-card.art-large,
+    .art-grid > .art-card.art-tall,
+    .art-grid > .art-card.art-wide,
+    .art-grid > .art-card.large,
+    .art-grid > .art-card.tall,
+    .art-grid > .art-card.wide {
+        height: auto;
+        min-height: 0;
+        aspect-ratio: 4 / 5;
+    }
+
+    .video-card,
+    .video-large,
+    .video-wide {
+        height: auto;
+        aspect-ratio: 4 / 5;
+    }
+
+    .contact-marquee {
+        width: calc(100% + 30px);
+        margin-left: -15px;
+    }
+
+    .mobile-menu {
+        padding-left: 17px;
+        padding-right: 17px;
+    }
+
+    .mobile-menu-links a {
+        font-size: clamp(29px, 9.5vw, 39px);
+    }
+
+    .viewer-image-wrapper {
+        height: min(58svh, 500px);
+    }
+}
+
+
+/* Touch devices should not keep desktop hover transforms active. */
+@media (pointer: coarse) {
+
+    .art-card:hover img,
+    .video-card:hover video,
+    .video-grid .video-card:hover {
+        transform: none !important;
+    }
+
+    .art-card:hover .art-card-glare {
+        display: none !important;
+    }
+}
