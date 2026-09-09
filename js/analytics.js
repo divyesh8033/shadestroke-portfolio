@@ -1,3 +1,14 @@
+const visitKey = "shadestroke-last-visit";
+
+const visitorKey = "shadestroke-visitor-id";
+
+let visitorId = localStorage.getItem(visitorKey);
+
+if (!visitorId) {
+    visitorId = crypto.randomUUID();
+    localStorage.setItem(visitorKey, visitorId);
+}
+
 import { initializeApp } from
 "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
 
@@ -44,6 +55,8 @@ async function saveVisit() {
 
         await addDoc(collection(db, "visits"), {
 
+            visitorId: visitorId,
+
             visitTime: serverTimestamp(),
 
             page: window.location.pathname,
@@ -69,4 +82,16 @@ async function saveVisit() {
     }
 }
 
-saveVisit();
+const lastVisit = localStorage.getItem(visitKey);
+
+const now = Date.now();
+
+const oneHour = 60 * 60 * 1000;
+
+if (!lastVisit || now - Number(lastVisit) > oneHour) {
+
+    saveVisit();
+
+    localStorage.setItem(visitKey, now.toString());
+
+}
