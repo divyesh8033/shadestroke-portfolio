@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ShadeStroke Analytics Dashboard</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0a0a0a;
+            color: white;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #FFBA53;
+        }
+
+        #loginSection,
+        #dashboardSection {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        input {
+            display: block;
+            width: 100%;
+            max-width: 350px;
+            margin: 12px 0;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            background: #151515;
+            color: white;
+        }
+
+        button {
+            padding: 12px 22px;
+            border: none;
+            border-radius: 8px;
+            background: #FFBA53;
+            color: #111;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        #dashboardSection > div {
+            background: #151515;
+            border: 1px solid #242424;
+            border-radius: 14px;
+            padding: 20px;
+            margin: 18px 0;
+        }
+
+        #totalVisits,
+        #uniqueVisitors,
+        #todayVisits {
+            font-size: 32px;
+            font-weight: bold;
+            color: #FFBA53;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>ShadeStroke Analytics Dashboard</h1>
+
+    <div id="loginSection">
+
+        <h1>ShadeStroke Analytics</h1>
+
+        <input
+            type="email"
+            id="adminEmail"
+            placeholder="Admin email"
+        >
+
+        <input
+            type="password"
+            id="adminPassword"
+            placeholder="Password"
+        >
+
+        <button id="loginButton">
+            Login
+        </button>
+
+        <p id="loginMessage"></p>
+
+    </div>
+
+
+    <div id="dashboardSection" style="display: none;">
+
+        <h1>ShadeStroke Analytics Dashboard</h1>
+
+        <div>
+            <h2>Total Visits</h2>
+            <p id="totalVisits">0</p>
+        </div>
+
+        <div>
+            <h2>Unique Visitors</h2>
+            <p id="uniqueVisitors">0</p>
+        </div>
+
+        <div>
+            <h2>Devices</h2>
+
+            <p>Desktop: <span id="desktopVisits">0</span></p>
+            <p>Mobile: <span id="mobileVisits">0</span></p>
+            <p>Tablet: <span id="tabletVisits">0</span></p>
+        </div>
+
+        <div>
+            <h2>Traffic Sources</h2>
+
+            <div id="trafficSources">
+                <p>Loading...</p>
+            </div>
+        </div>
+
+        <div>
+            <h2>Recent Visits</h2>
+
+            <div id="recentVisits">
+                <p>Loading...</p>
+            </div>
+        </div>
+
+        <div>
+            <h2>Today's Visits</h2>
+            <p id="todayVisits">0</p>
+        </div>
+
+        <button id="logoutButton">
+            Logout
+        </button>
+
+    </div>
+
+
+    <script type="module" src="js/dashboard.js"></script>
+
+</body>
+
+</html>
