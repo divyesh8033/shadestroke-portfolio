@@ -1,13 +1,13 @@
-document.addEventListener("DOMContentLoaded", () => {
+// Remove tracking parameters from the URL
+if (window.location.search) {
+    window.history.replaceState(
+        {},
+        document.title,
+        window.location.pathname + window.location.hash
+    );
+}
 
-    // Remove tracking parameters from the URL
-    if (window.location.search) {
-        window.history.replaceState(
-            {},
-            document.title,
-            window.location.pathname + window.location.hash
-        );
-    }
+document.addEventListener("DOMContentLoaded", () => {
 
     /* =========================================
        ELEMENTS
