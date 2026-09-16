@@ -5132,3 +5132,33 @@ body.viewer-open .back-top {
         right: 12px;
     }
 }
+
+/* ========================================
+   MOBILE BACK TO TOP FIX
+======================================== */
+
+@media (max-width: 768px) {
+
+    .back-top {
+        position: fixed;
+        right: 14px;
+        bottom: 18px;
+
+        width: 46px;
+        height: 46px;
+
+        z-index: 900;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .back-top span {
+        pointer-events: none;
+    }
+
+}
